@@ -30,7 +30,7 @@ var myGameArea = {
         this.interval = setInterval(updateGameArea, 20);
         pause = true;
         window.addEventListener("keydown", keydown);
-        window.addEventListener("touchstart", keydown);
+        window.addEventListener("touchend", keydown);
         },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
