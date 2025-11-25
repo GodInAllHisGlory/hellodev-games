@@ -1,0 +1,11 @@
+#game-container {
+    width: 480px;
+    height: 270px;
+}
+
+.button {
+    position: absolute;
+    top: 20%;
+    left: 20%; 
+
+}
