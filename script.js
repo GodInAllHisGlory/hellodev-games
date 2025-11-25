@@ -30,7 +30,7 @@ var myGameArea = {
         this.interval = setInterval(updateGameArea, 20);
         pause = true;
         window.addEventListener("keydown", keydown);
-        window.addEventListener("click", keydown);
+        window.addEventListener("touchstart", keydown);
         },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -87,7 +87,6 @@ function component(width, height, color, x, y, type) {
         } else {
             this.gravitySpeed += 0.2;
         }
-        console.log(this.gravitySpeed);
         this.x += this.speedX;
         this.y += this.speedY + this.gravitySpeed;
         this.hitBottom();
@@ -126,9 +125,9 @@ function component(width, height, color, x, y, type) {
 
 function keydown(e){
     let key = e.key
-            if (key == " " && !e.repeat){
-                flyUp();
-            }
+    let touchList = e.touchList;
+        if ((key !== " " || e.repeat) && touchList === undefined) return;
+        flyUp();
 }
 
 function updateGameArea() {
