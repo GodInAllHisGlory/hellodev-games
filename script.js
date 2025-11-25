@@ -126,6 +126,7 @@ function component(width, height, color, x, y, type) {
 function keydown(e){
     let key = e.key
     let touchList = e.touchList;
+    document.getElementById("log").innerHTML = touchList;
         if ((key !== " " || e.repeat) && touchList === undefined) return;
         flyUp();
 }
