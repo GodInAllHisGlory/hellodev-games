@@ -126,7 +126,7 @@ function component(width, height, color, x, y, type) {
 function keydown(e){
     let key = e.key
     let pointer = e.pointerId;
-        if ((key !== " " || e.repeat) && PointerEvent === undefined) return;
+        if ((key !== " " || e.repeat) && pointer === undefined) return;
         flyUp();
 }
 
