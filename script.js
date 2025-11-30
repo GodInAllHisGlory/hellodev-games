@@ -30,7 +30,7 @@ var myGameArea = {
         this.interval = setInterval(updateGameArea, 20);
         pause = true;
         window.addEventListener("keydown", keydown);
-        window.addEventListener("touchend", keydown);
+        window.addEventListener("click", keydown);
         },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -125,9 +125,8 @@ function component(width, height, color, x, y, type) {
 
 function keydown(e){
     let key = e.key
-    let touchList = e.touchList;
-    document.getElementById("log").innerHTML = touchList;
-        if ((key !== " " || e.repeat) && touchList === undefined) return;
+    let pointer = e.pointerId;
+        if ((key !== " " || e.repeat) && PointerEvent === undefined) return;
         flyUp();
 }
 
